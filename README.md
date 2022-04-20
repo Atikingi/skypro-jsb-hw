@@ -1,4 +1,4 @@
 # skypro-jsb-hw
 Домашние задания по теме JavaScript в браузере
 
-## [Password-randomizer](https://github.com/Atikingi/skypro-jsb-hw/password-randomizer)
+## [Password-randomizer](https://Atikingi.github.io/skypro-jsb-hw/password-randomizer/)
