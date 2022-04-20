@@ -21,3 +21,4 @@ generatePassword.onclick = function () {
 
   return passwordOutput;
 };
+//test
