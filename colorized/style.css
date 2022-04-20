@@ -1,0 +1,47 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.body-color{
+  background-color: rgb(0, 0, 0);
+}
+
+.box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.title{
+  color: white;
+  margin-bottom: 100px;
+}
+
+#addRedColorButton,
+#addBlueColorButton,
+#addGreenColorButton,
+#resetButton {
+  width: 100px;
+  height: 80px;
+  background-color: red;
+  color: white;
+}
+
+#addRedButton {
+  background-color: red;
+}
+
+#addBlueColorButton {
+  background-color: blue;
+}
+
+#addGreenColorButton {
+  background-color: green;
+}
+
+#resetButton{
+  background-color: rgb(6, 229, 236);
+}
