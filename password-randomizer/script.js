@@ -17,7 +17,7 @@ generatePassword.onclick = function () {
     arrPasswordSymbols.push(passwordSymbols[randomNumber]);
   }
 
-  passwordOutput.value = Arr.join("");
+  passwordOutput.value = arrPasswordSymbols.join("");
 
   return passwordOutput;
 };
