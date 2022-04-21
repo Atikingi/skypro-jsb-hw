@@ -2,37 +2,35 @@ const redColor = document.getElementById('addRedColorButton');
 const blueColor = document.getElementById('addBlueColorButton');
 const greenColor = document.getElementById('addGreenColorButton');
 const resetColor = document.getElementById('resetButton');
-let colorArr = [0,0,0];
+const colorArr = [0,0,0];
 let colorRGBValue;
 let rgbColor;
 
 
-function addRedColor () {
-  colorArr[0] += 10;
-  colorRGBValue = colorArr.join(',')
+const addColor = (color) => {
+  colorArr[color] += 10;
+  colorRGBValue = colorArr.join(",");
   rgbColor = `rgb(${colorRGBValue})`;
   document.body.style.backgroundColor = rgbColor;
+}
+
+function addRedColor () {
+  addColor(0);
 };
 
 function addGreenColor () {
-  colorArr[1] += 10;
-  colorRGBValue = colorArr.join(',')
-  rgbColor = `rgb(${colorRGBValue})`;
-  document.body.style.backgroundColor = rgbColor;
+  addColor(1);
 };
 
 function addBlueColor () {
-  colorArr[2] += 10;
-  colorRGBValue = colorArr.join(',')
-  rgbColor = `rgb(${colorRGBValue})`;
-  document.body.style.backgroundColor = rgbColor;
+  addColor(2);
 };
 
 function clearColor (){
-  colorArr = [0,0,0];
-  colorRGBValue = colorArr.join(',')
-  rgbColor = `rgb(${colorRGBValue})`;
-  document.body.style.backgroundColor = rgbColor;
+  colorArr[0] = 0;
+  colorArr[1] = 0;
+  colorArr[2] = 0;
+  document.body.style.backgroundColor = `rgb(0,0,0)`;
 }
 
 redColor.onclick = addRedColor;
