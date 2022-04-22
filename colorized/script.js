@@ -27,7 +27,7 @@ function addBlueColor () {
 };
 
 function clearColor (){
-  colorArr[0] = 0;
+  colorArr.forEach((el) => el = 0);
   colorArr[1] = 0;
   colorArr[2] = 0;
   document.body.style.backgroundColor = `rgb(0,0,0)`;
