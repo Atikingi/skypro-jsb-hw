@@ -1,3 +1,3 @@
 setTimeout(() => {
-    location.pathname = 'dragon-quest/index.html';
+    location.pathname = '/skypro-jsb-hw/dragon-quest/index.html';
 }, 5000);
