@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.box{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgb(204, 153, 134);
+}
+
+.tired-button{
+    width: 200px;
+    height: 100px;
+    
+    font-weight: 600;
+    color: rgb(34, 90, 71);
+    background: rgb(177, 172, 238);
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.tired-button:disabled{
+    background: rgb(7, 7, 7);
+}
