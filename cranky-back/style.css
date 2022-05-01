@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    margin-top: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    background-color: bisque;
+}
+
+.box-form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.please-text{
+    width: 100px;
+    height: 18px;
+}
