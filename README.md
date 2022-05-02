@@ -8,3 +8,6 @@
 ## HomeWork-2:
 ## [Dragon-quest](https://Atikingi.github.io/skypro-jsb-hw/dragon-quest/)
 ## [Geowidget](https://Atikingi.github.io/skypro-jsb-hw/geowidget/)
+## HomeWork-3:
+## [Color-bingo](https://Atikingi.github.io/skypro-jsb-hw/color-bingo/)
+## [Tired-button](https://Atikingi.github.io/skypro-jsb-hw/tired-button/)
