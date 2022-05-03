@@ -11,3 +11,7 @@
 ## HomeWork-3:
 ## [Color-bingo](https://Atikingi.github.io/skypro-jsb-hw/color-bingo/)
 ## [Tired-button](https://Atikingi.github.io/skypro-jsb-hw/tired-button/)
+## HomeWork-4:
+## [Cranky-back](https://Atikingi.github.io/skypro-jsb-hw/cranky-back/)
+## [I-know-your-path](https://Atikingi.github.io/skypro-jsb-hw/i-know-your-path/)
+## [Greedy-input](https://Atikingi.github.io/skypro-jsb-hw/greedy-input/)
