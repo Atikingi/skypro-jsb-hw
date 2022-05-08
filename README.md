@@ -16,4 +16,4 @@
 ## [I-know-your-path](https://Atikingi.github.io/skypro-jsb-hw/i-know-your-path/)
 ## [Greedy-input](https://Atikingi.github.io/skypro-jsb-hw/greedy-input/)
 ## HomeWork-5:
-## [Im-age](https://Atikingi.github.io/skypro-jsb-hw/Im-age/)
+## [Im-age](https://Atikingi.github.io/skypro-jsb-hw/im-age/)
