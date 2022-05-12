@@ -1,9 +1,9 @@
 const startBlock = document.querySelector('.beer');
 
-function createBeerCard(){
+function createBeerCard(dataList){
     let beerCard;
 
-    for (let i = 0; i < beerList.length; i++) {
+    for (let i = 0; i < dataList.length; i++) {
         beerCard = {
             tag: 'div',
             cls: 'beer__card',
@@ -11,12 +11,12 @@ function createBeerCard(){
               {
                 tag: 'h2',
                 cls: 'beer__title',
-                text: beerList[i].name,
+                text: dataList[i].name,
               },
               {
                 tag: 'h5',
                 cls: 'beer__tagline',
-                text: beerList[i].tagline,
+                text: dataList[i].tagline,
               },
               {
                 tag: 'div',
@@ -26,7 +26,7 @@ function createBeerCard(){
                     tag: 'img',
                     cls: 'beer__image',
                     attrs: {
-                      src: beerList[i].image_url,
+                      src: dataList[i].image_url,
                       width: '100',
                       height: '330',
                     },
@@ -38,7 +38,7 @@ function createBeerCard(){
                       {
                         tag: 'p',
                         cls: 'beer__strength',
-                        text: `${beerList[i].abv} % ABV / ${beerList[i].volume.value} ${beerList[i].volume.unit}`
+                        text: `${dataList[i].abv} % ABV / ${beerList[i].volume.value} ${beerList[i].volume.unit}`
                       },
                       {
                         tag: 'h3',
@@ -48,7 +48,7 @@ function createBeerCard(){
                       {
                         tag: 'ul',
                         cls: 'beer__food',
-                        list: beerList[i].food_pairing,
+                        list: dataList[i].food_pairing,
                       },
                       {
                         tag: 'p',
@@ -58,7 +58,7 @@ function createBeerCard(){
                       {
                         tag: 'p',
                         cls: 'brewers-tips',
-                        text: beerList[i].brewers_tips,
+                        text: dataList[i].brewers_tips,
                       },
                     ],
                   },
@@ -67,7 +67,7 @@ function createBeerCard(){
               {
                 tag: 'p',
                 cls: 'beer__description',
-                text: beerList[i].description,
+                text: dataList[i].description,
               },
             ],
           };
@@ -76,7 +76,7 @@ function createBeerCard(){
     }
 }
 
-createBeerCard();
+createBeerCard(beerList);
 
 
 
