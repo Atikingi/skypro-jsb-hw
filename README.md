@@ -17,3 +17,5 @@
 ## [Greedy-input](https://Atikingi.github.io/skypro-jsb-hw/greedy-input/)
 ## HomeWork-5:
 ## [Im-age](https://Atikingi.github.io/skypro-jsb-hw/im-age/)
+## HomeWork-6:
+## [Bar-js-beer](https://Atikingi.github.io/skypro-jsb-hw/bar-js-beer/)
