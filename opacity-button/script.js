@@ -2,10 +2,12 @@ const button = document.querySelector('.hello-button');
 let opacityValue = 1;
 
 const helloBox = (event) => {
-  const target = event.target;
+  const { target } = event;
 
   if (opacityValue < 0.2) {
-    return (target.textContent = 'Я не исчезну!!!');
+    target.textContent = 'Я не исчезну!!!'
+    
+    return;
   }
 
   opacityValue /= 2;
