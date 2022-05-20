@@ -19,3 +19,7 @@
 ## [Im-age](https://Atikingi.github.io/skypro-jsb-hw/im-age/)
 ## HomeWork-6:
 ## [Bar-js-beer](https://Atikingi.github.io/skypro-jsb-hw/bar-js-beer/)
+## HomeWork-7:
+## [Hello-user](https://Atikingi.github.io/skypro-jsb-hw/hello-user/)
+## [Neat-hello-user](https://Atikingi.github.io/skypro-jsb-hw/neat-hello-user/)
+## [Opacity-button](https://Atikingi.github.io/skypro-jsb-hw/opacity-button/)
