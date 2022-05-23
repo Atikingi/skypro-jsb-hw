@@ -23,3 +23,6 @@
 ## [Hello-user](https://Atikingi.github.io/skypro-jsb-hw/hello-user/)
 ## [Neat-hello-user](https://Atikingi.github.io/skypro-jsb-hw/neat-hello-user/)
 ## [Opacity-button](https://Atikingi.github.io/skypro-jsb-hw/opacity-button/)
+## HomeWork-8:
+## [Input-of-dissentings](https://Atikingi.github.io/skypro-jsb-hw/input-of-dissentings/)
+## [Inputman](https://Atikingi.github.io/skypro-jsb-hw/inputman/)
