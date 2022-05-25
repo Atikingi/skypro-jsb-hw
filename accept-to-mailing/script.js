@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const errorMessage = document.querySelector('.form__error-message');
 
   form.addEventListener('submit', (event) => {
-    if (checkbox.checked === false) {
+    if (!checkbox.checked) {
       event.preventDefault();
       checkboxWrapper.classList.add('form__error');
       errorMessage.classList.remove('form__error-message__hidden');
