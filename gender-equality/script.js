@@ -10,6 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
          return
       }
 
+      const showGenderError = (message) => {
+        event.preventDefault();
+        errorMessage.textContent = message;
+        errorMessage.classList.remove('form__error-message__hidden');
+      }
+      
       if (radioValue.value === 'men') {
         showGenderError(`Мужчинам вход запрещен`);
       }
@@ -18,10 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
         showGenderError(`Женщинам вход запрещен`);
       }
     });
-      const showGenderError = (message) => {
-        event.preventDefault();
-        errorMessage.textContent = message;
-        errorMessage.classList.remove('form__error-message__hidden');
-  }
+
   });
 });
