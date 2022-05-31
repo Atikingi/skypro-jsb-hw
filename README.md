@@ -26,3 +26,8 @@
 ## HomeWork-8:
 ## [Input-of-dissentings](https://Atikingi.github.io/skypro-jsb-hw/input-of-dissentings/)
 ## [Inputman](https://Atikingi.github.io/skypro-jsb-hw/inputman/)
+## HomeWork-9:
+## [Log-and-pass](https://Atikingi.github.io/skypro-jsb-hw/log-and-pass/)
+## [Go-to-magadan](https://Atikingi.github.io/skypro-jsb-hw/go-to-magadan/)
+## [Accept-to-mailing](https://Atikingi.github.io/skypro-jsb-hw/accept-to-mailing/)
+## [Gender-equality](https://Atikingi.github.io/skypro-jsb-hw/gender-equality/)
