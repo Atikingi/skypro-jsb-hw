@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: bisque;
+}
+
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.form__gender{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+
+.form__error {
+  border-color: red;
+}
+
+.form__error-message {
+  position: absolute;
+  bottom: -50px;
+  margin-top: 10px;
+  font-style: italic;
+  font-size: 14px;
+  text-align: center;
+}
+
+.form__error-message__hidden {
+  display: none;
+}
