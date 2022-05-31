@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/3efd1b1d7f.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Рейтинг с комментарием</title>
+  </head>
+  <body>
+    <div class="container">
+      <form class="form" action="#" method="GET">
+        <div class="form__error form__error__hidden">
+          Выберите рейтинг перед отправкой
+        </div>
+        <div class="rating-box">
+          <label for="rating1" class="star-box">
+            <span class="stars star-item"></span>
+            <input class="form__rating" type="checkbox" id="rating1" />
+          </label>
+          <label for="rating2" class="star-box">
+            <span class="stars star-item"></span>
+            <input class="form__rating" type="checkbox" id="rating2" />
+          </label>
+          <label for="rating3" class="star-box">
+            <span class="stars star-item"></span>
+            <input class="form__rating" type="checkbox" id="rating3" />
+          </label>
+          <label for="rating4" class="star-box">
+            <span class="stars star-item"></span>
+            <input class="form__rating" type="checkbox" id="rating4" />
+          </label>
+          <label for="rating5" class="star-box">
+            <span class="stars star-item"></span>
+            <input class="form__rating" type="checkbox" id="rating5" />
+          </label>
+        </div>
+        <textarea
+          class="form__comment"
+          cols="30"
+          rows="10"
+          minlength="10"
+          placeholder="Напишите отзыв (не менее 10 символов)"
+          required
+        ></textarea>
+        <button type="submit">Отправить отзыв</button>
+      </form>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
