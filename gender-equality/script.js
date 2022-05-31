@@ -11,14 +11,14 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       if (radioValue.value === 'men') {
-        checkGender(`Мужчинам вход запрещен`);
+        showGenderError(`Мужчинам вход запрещен`);
       }
 
       if (radioValue.value === 'women') {
-        checkGender(`Женщинам вход запрещен`);
+        showGenderError(`Женщинам вход запрещен`);
       }
     });
-      const checkGender = (message) => {
+      const showGenderError = (message) => {
         event.preventDefault();
         errorMessage.textContent = message;
         errorMessage.classList.remove('form__error-message__hidden');
