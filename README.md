@@ -31,3 +31,5 @@
 ## [Go-to-magadan](https://Atikingi.github.io/skypro-jsb-hw/go-to-magadan/)
 ## [Accept-to-mailing](https://Atikingi.github.io/skypro-jsb-hw/accept-to-mailing/)
 ## [Gender-equality](https://Atikingi.github.io/skypro-jsb-hw/gender-equality/)
+## HomeWork-9:
+## [Rating-and-comment](https://Atikingi.github.io/skypro-jsb-hw/rating-and-comment/)
