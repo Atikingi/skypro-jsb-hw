@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Пин-кодер</title>
+  </head>
+  <body>
+    <div class="container">
+      <form class="pin-code__content" action="#">
+        <h1 class="pin-code__title">Введите пин-код</h1>
+        <input
+          class="pin-code__input-inner"
+          type="text"
+          id="pin-code__input-inner"
+          placeholder="6 цифр"
+          maxlength="6"
+          required
+          title="Пин-код должен состоять из 6 цифр"
+          autocomplete="off"
+        />
+        <div class="pin-code__accept pin-code__accept__hidden">
+          <input class="pin-code__accept-item" type="text" />
+          <input class="pin-code__accept-item" type="text" />
+          <input class="pin-code__accept-item" type="text" />
+          <input class="pin-code__accept-item" type="text" />
+          <input class="pin-code__accept-item" type="text" />
+          <input class="pin-code__accept-item" type="text" />
+        </div>
+        <div class="pin-code__keyboard">
+          <div class="pin-code__keyboard-item">1</div>
+          <div class="pin-code__keyboard-item">2</div>
+          <div class="pin-code__keyboard-item">3</div>
+          <div class="pin-code__keyboard-item">4</div>
+          <div class="pin-code__keyboard-item">5</div>
+          <div class="pin-code__keyboard-item">6</div>
+          <div class="pin-code__keyboard-item">7</div>
+          <div class="pin-code__keyboard-item">8</div>
+          <div class="pin-code__keyboard-item">9</div>
+          <div class="pin-code__keyboard-item">0</div>
+        </div>
+        <button class="pin-code__save" type="submit">Сохранить пин-код</button>
+      </form>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

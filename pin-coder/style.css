@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgb(106, 208, 209);
+  background: linear-gradient(
+    0deg,
+    rgba(106, 208, 209, 1) 20%,
+    rgba(146, 45, 253, 1) 97%
+  );
+}
+
+.pin-code__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 300px;
+  padding: 10px;
+
+  /* border: 3px solid rgba(146, 45, 253, 1);
+    border-radius: 10px; */
+}
+
+.pin-code__title {
+  font-size: 26px;
+  color: white;
+}
+
+.pin-code__accept {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pin-code__accept-item {
+  width: 35px;
+  height: 50px;
+
+  text-align: center;
+  font-size: 24px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+  outline: none;
+}
+
+.pin-code__accept-item:focus {
+  border: 1px solid rgba(106, 208, 209, 1);
+}
+
+.pin-code__accept__hidden {
+  display: none;
+}
+
+.pin-code__input-inner {
+  width: 150px;
+  height: 30px;
+
+  text-align: center;
+  border: 0;
+  outline: none;
+  font-size: 16px;
+}
+
+.pin-code__save {
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 10px;
+    position: relative;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, .4);
+    background: none;
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+  }
+  .pin-code__save:before, .pin-code__save:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    box-sizing: border-box;
+  }
+  .pin-code__save:before {
+    bottom: 0;
+    left: 0;
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+    transition: 0s ease opacity .8s, .2s ease width .4s, .2s ease height .6s;
+  }
+  .pin-code__save:after {
+    top: 0;
+    right: 0;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    transition: 0s ease opacity .4s, .2s ease width, .2s ease height .2s;
+  }
+  .pin-code__save:hover:before, 
+  .pin-code__save:hover:after {
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+  }
+  .pin-code__save:hover:before {
+    transition: 0s ease opacity 0s, .2s ease height, .2s ease width .2s;
+  }
+  .pin-code__save:hover:after {
+    transition: 0s ease opacity .4s, .2s ease height .4s, .2s ease width .6s;
+  }
+  .pin-code__save:hover {
+    background: rgba(255, 255, 255, .2);
+  }
+
+  .pin-code__keyboard{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      width: 220px;
+  }
+
+  .pin-code__keyboard-item{
+      width: 40px;
+
+      font-size: 26px;
+      color: white;
+      text-align: center;
+  }
+
+  .pin-code__keyboard-item:hover{
+      background-color: white;
+      color: black;
+      cursor: pointer;
+      border-radius: 25px;
+  }
