@@ -9,16 +9,14 @@
   </head>
   <body>
     <div class="container">
-      <form class="pin-code__content" action="#">
-        <h1 class="pin-code__title">Введите пин-код</h1>
+      <!-- <form class="pin-code__content" action="#">
+        <h1 class="pin-code__title">Придумайте и сохраните новый пин-код</h1>
         <input
           class="pin-code__input-inner"
           type="text"
-          id="pin-code__input-inner"
           placeholder="6 цифр"
           maxlength="6"
           required
-          title="Пин-код должен состоять из 6 цифр"
           autocomplete="off"
         />
         <div class="pin-code__accept pin-code__accept__hidden">
@@ -41,9 +39,19 @@
           <div class="pin-code__keyboard-item">9</div>
           <div class="pin-code__keyboard-item">0</div>
         </div>
-        <button class="pin-code__save" type="submit">Сохранить пин-код</button>
-      </form>
+        <button
+          class="pin-code__save pin-code__button"
+          type="submit"
+        >
+          Сохранить пин-код
+        </button>
+        <button class="pin-code__clear pin-code__clear__hidden pin-code__button">
+          Очистить сохраненный пин-код
+        </button>
+      </form> -->
     </div>
-    <script src="./script.js"></script>
+    <script src="./src/pin-code-map.js"></script>
+    <script src="./src/template-engine.js"></script>
+    <script src="./src/script.js"></script>
   </body>
 </html>
