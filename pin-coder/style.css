@@ -38,7 +38,7 @@
   text-align: center;
 }
 
-.pin-code__accept {
+.pin-code__accept-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
