@@ -1,9 +1,3 @@
-// const pinCodeAcceptWrapper = [{
-//   tag: 'div',
-//   cls: 'pin-code__accept-wrapper',
-//   content: createPinCodeAccept(),
-// }]
-
 class pinCode {
   constructor(element) {
     if (!(element instanceof HTMLElement)) {
@@ -22,52 +16,56 @@ class pinCode {
     this.pinCodeClear = document.querySelector('.pin-code__clear');
     this.pinCodeSave = document.querySelector('.pin-code__save');
     this.pinCodeAccept = document.querySelector('.pin-code__accept');
-    this.pinCodeInputsAccept = document.querySelectorAll('.pin-code__accept-item');
-    this.pinCodeFirstInput = document.querySelector('.pin-code__accept-item');
+    this.popupMessage = document.querySelector('.content__popup');
+    this.copyStatus = document.querySelector('.content__popup');
 
     this.writePinCode = this.writePinCode.bind(this);
     this.savePinCode = this.savePinCode.bind(this);
     this.clearPinCode = this.clearPinCode.bind(this);
+    this.checkInputs = this.checkInputs.bind(this);
+    this.writeSingleInputs = this.writeSingleInputs.bind(this);
+    this.generatePinCodeScreen = this.generatePinCodeScreen.bind(this);
+    this.checkUserInputData = this.checkUserInputData.bind(this);
+    this.showCopyPopup = this.showCopyPopup.bind(this);
 
     this.checkLocalStorage();
-
-    this.inputOnFocus;
 
     if (localStorage.userPinCode) {
       this.pinCodeAcceptWrapper = [
         {
           tag: 'div',
           cls: 'pin-code__accept-wrapper',
-          content: createPinCodeAccept((length = localStorage.userPinCode.length)),
+          content: createPinCodeAccept(),
         },
       ];
 
       this.renderBlock(this.pinCodeAcceptWrapper, this.pinCodeAccept);
+
+      this.generatePinCodeScreen();
     }
+
+    this.pinCodeInput.onkeydown = (event) => {
+      return event.which !== 32;
+    };
 
     this.pinCodeKeys.forEach((key) => {
       key.addEventListener('click', (event) => {
         if (localStorage.userPinCode) {
-          // if(document.querySelector('.pin-code__accept-item').value.length){
-          //   document.querySelector('.pin-code__accept-item').nextElementSibling.focus();
-          // }else{
-          //   document.querySelector('.pin-code__accept-item').focus();
-          // }
-
-          Array.from(document.querySelectorAll('.pin-code__accept-item')).reverse().find((input) => {
-            if (!input.value.length){
-              console.log('ntq');
-              this.writePinCode(event);
-              return input.focus();
-             }
-          })
-          
-          this.writePinCode(event);
-          return;
+          this.writeSingleInputs(event);
         }
 
         this.pinCodeInput.focus();
         this.writePinCode(event);
+
+        if (this.pinCodeInputsWrapper.lastChild.value) {
+          this.pinCodeInputsAccept.forEach((input) => {
+            this.pinCodeValue.push(input.value);
+          });
+        }
+
+        if (this.pinCodeValue.join('') === localStorage.userPinCode) {
+          this.showCopyPopup();
+        }
       });
     });
 
@@ -93,8 +91,15 @@ class pinCode {
         },
       ];
 
+      this.renderBlock(this.pinCodeAcceptWrapper, this.pinCodeAccept);
+
       this.savePinCode();
       this.checkLocalStorage();
+      this.generatePinCodeScreen();
+    });
+
+    this.pinCodeInput.addEventListener('input', (event) => {
+      this.checkUserInputData(event.target);
     });
   }
 
@@ -106,34 +111,24 @@ class pinCode {
     const { target } = event;
     const keyNumber = target.textContent;
 
-    if (localStorage.userPinCode) {
-      document.querySelectorAll('.pin-code__accept-item').forEach((input) => {
-        input.onfocus = () => {
-          input.value = keyNumber;
-        }
-      })
-        
-      }
-
-
-
     this.pinCodeInput.value.length < 6
       ? (this.pinCodeInput.value += keyNumber)
       : (this.pinCodeInput.value = this.pinCodeInput.value);
-  } 
+  }
 
   clearPinCode() {
     localStorage.removeItem('userPinCode');
+
     this.pinCodeAccept.querySelectorAll('.pin-code__accept-wrapper').forEach((node) => {
       node.remove();
     });
+
     this.checkLocalStorage();
     this.pinCodeInput.value = '';
   }
 
   savePinCode() {
     this.checkLocalStorage();
-    this.renderBlock(this.pinCodeAcceptWrapper, this.pinCodeAccept);
     localStorage.setItem('userPinCode', this.pinCodeInput.value.toString());
   }
 
@@ -152,6 +147,98 @@ class pinCode {
       this.pinCodeInput.classList.remove('pin-code__input-inner__hidden');
       this.pinCodeSave.classList.remove('pin-code__save__hidden');
     }
+  }
+
+  checkInputs(elem) {
+    elem.addEventListener('paste', (event) => {
+      const userData = event.clipboardData.getData('text/plain');
+
+      for (let i = 0; i < localStorage.userPinCode.length; i++) {
+        this.pinCodeInputsAccept[i].value = userData[i];
+
+        if (i === localStorage.userPinCode.length - 1) {
+          this.pinCodeInputsAccept[i].focus();
+        }
+      }
+    });
+
+    elem.addEventListener('input', (event) => {
+      this.checkUserInputData(event.target);
+      this.pinCodeValue = [];
+
+      document.onkeydown = (e) => {
+        if (e.key === 'Backspace' && elem.previousElementSibling) {
+          elem.value = '';
+          elem.classList.remove('pin-code__input-inner__error');
+          elem.previousElementSibling.focus();
+        }
+      };
+
+      if (elem.value.length === 1 && elem.nextElementSibling) {
+        elem.nextElementSibling.focus();
+      }
+
+      if (this.pinCodeInputsWrapper.lastChild.value) {
+        this.pinCodeInputsAccept.forEach((input) => {
+          this.pinCodeValue.push(input.value);
+        });
+      }
+
+      if (this.pinCodeValue.join('') === localStorage.userPinCode) {
+        this.showCopyPopup();
+      }
+    });
+  }
+
+  writeSingleInputs(event) {
+    const { target } = event;
+    const keyNumber = target.textContent;
+    this.pinCodeValue = [];
+
+    if (!this.currentInput.nextElementSibling) {
+      this.currentInput.value = keyNumber;
+      return;
+    }
+
+    this.currentInput.value = keyNumber;
+
+    this.currentInput.nextElementSibling.focus();
+  }
+
+  generatePinCodeScreen() {
+    this.pinCodeInputsWrapper = document.querySelector('.pin-code__accept-wrapper');
+    this.pinCodeInputsAccept = document.querySelectorAll('.pin-code__accept-item');
+    this.pinCodeFirstInput = document.querySelector('.pin-code__accept-item');
+    this.currentInput = this.pinCodeFirstInput;
+
+    this.pinCodeFirstInput.focus();
+
+    this.pinCodeInputsAccept.forEach((input) => {
+      this.checkInputs(input);
+
+      input.addEventListener('focus', () => {
+        this.currentInput = input;
+        input.focus();
+      });
+    });
+  }
+
+  checkUserInputData(elem) {
+    if (isNaN(elem.value)) {
+      elem.value = [...elem.value]
+        .filter((e) => isFinite(e))
+        .join('')
+        .replace(/\s/g, '');
+      elem.classList.add('pin-code__input-inner__error');
+    } else {
+      elem.classList.remove('pin-code__input-inner__error');
+      console.log(this.pinCodeValue);
+    }
+  }
+
+  showCopyPopup() {
+    this.copyStatus.classList.remove('hide');
+    setTimeout(() => this.copyStatus.classList.add('hide'), 1500);
   }
 }
 

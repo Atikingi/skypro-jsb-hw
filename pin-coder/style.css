@@ -78,6 +78,10 @@
   display: none;
 }
 
+.pin-code__input-inner__error {
+  border: 2px solid crimson;
+}
+
 /* Стиль кнопки делал конечно не сам =) */
 .pin-code__button {
   text-decoration: none;
@@ -162,4 +166,31 @@
   color: black;
   cursor: pointer;
   border-radius: 25px;
+}
+
+.content__popup {
+  width: 100%;
+  min-height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  position: fixed;
+  top: 0px;
+}
+
+.popup-box {
+  min-width: 230px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 11px;
+  margin: 49vh auto;
+  max-width: 200px;
+  border-radius: 12px;
+  font-size: 24px;
+  color: #ffffff;
+  background: #00bf98;
+}
+
+.hide {
+  display: none;
 }

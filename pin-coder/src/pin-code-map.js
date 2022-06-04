@@ -1,5 +1,6 @@
 function createPinCodeAccept(length) {
   let multiplyBLock = [];
+
   length = localStorage.userPinCode
     ? localStorage.userPinCode.length
     : document.querySelector('.pin-code__input-inner').value.length;
@@ -8,7 +9,7 @@ function createPinCodeAccept(length) {
     multiplyBLock[i] = {
       tag: 'input',
       cls: 'pin-code__accept-item',
-      attrs: { type: 'text' },
+      attrs: { type: 'text', maxlength: '1' },
     };
   }
   return multiplyBLock;
