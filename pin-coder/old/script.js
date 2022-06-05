@@ -1,4 +1,4 @@
-class pinCode {
+class PinCode {
   constructor(element) {
     if (!(element instanceof HTMLElement)) {
       throw new Error('Передан не HTML элемент');
@@ -242,4 +242,12 @@ class pinCode {
   }
 }
 
-const pinCodeForm = new pinCode(document.querySelector('.container'));
+class ValidateProps {
+  constructor (props){
+    if (!(props instanceof HTMLElement)) {
+      throw new Error('Передан не HTML элемент');
+    }
+  }
+}
+
+const pinCodeForm = new PinCode(document.querySelector('.container'));

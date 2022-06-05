@@ -48,7 +48,7 @@ const pinCodeMap = [
         cls: 'pin-code__input-inner',
         attrs: {
           type: 'text',
-          placeholder: '6 цифр',
+          placeholder: 'от 1 до 6 цифр',
           maxlength: '6',
           autocomplete: 'off',
         },

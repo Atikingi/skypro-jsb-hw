@@ -151,6 +151,8 @@
   flex-wrap: wrap;
   gap: 30px;
   width: 220px;
+
+  pointer-events: none;
 }
 
 .pin-code__keyboard-item {
@@ -159,6 +161,7 @@
   font-size: 26px;
   color: white;
   text-align: center;
+  pointer-events: all;
 }
 
 .pin-code__keyboard-item:hover {
