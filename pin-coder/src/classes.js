@@ -1,13 +1,7 @@
-function ValidateProps(props) {
-  if (!(props instanceof HTMLElement)) {
-    throw new Error('Передан не HTML элемент');
-  }
-}
-
 class PinCode {
   constructor(element) {
-    ValidateProps(element);
-
+    this.validateProps(element);
+    
     this.wrapper = document.querySelector('.container');
 
     this.renderBlock(pinCodeMap, this.wrapper);
@@ -42,6 +36,12 @@ class PinCode {
       elem.classList.remove('pin-code__input-inner__error');
     }
   }
+  
+  validateProps(props) {
+  if (!(props instanceof HTMLElement)) {
+    throw new Error('Передан не HTML элемент');
+  }
+}
 }
 
 class PinCodeKeyboard extends PinCode {
