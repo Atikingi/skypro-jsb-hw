@@ -24,21 +24,7 @@ export default class PinCodeInner {
 
     this.pinCodeAccept.classList.remove('pin-code__accept__hidden');
 
-    this.pinCodeKeyboard.addEventListener('click', (event) => {
-      if (localStorage.userPinCode) {
-        this.writeSingleInputs(event);
-
-        if (this.pinCodeInputsWrapper.lastChild.value) {
-          this.pinCodeInputsAccept.forEach((input) => {
-            this.pinCodeValue.push(input.value);
-          });
-        }
-      }
-
-      if (this.pinCodeValue.join('') === localStorage.userPinCode) {
-        new Popup();
-      }
-    });
+    this.keyboardEvent(this.pinCodeKeyboard);
 
     if (localStorage.userPinCode) {
       this.generatePinCodeScreen();
@@ -65,6 +51,24 @@ export default class PinCodeInner {
     }
 
     return multiplyBLock;
+  }
+
+  keyboardEvent(keyboard) {
+    keyboard.addEventListener('click', (event) => {
+      if (localStorage.userPinCode) {
+        this.writeSingleInputs(event);
+
+        if (this.pinCodeInputsWrapper.lastChild.value) {
+          this.pinCodeInputsAccept.forEach((input) => {
+            this.pinCodeValue.push(input.value);
+          });
+        }
+      }
+
+      if (this.pinCodeValue.join('') === localStorage.userPinCode) {
+        new Popup();
+      }
+    });
   }
 
   writeSingleInputs(event) {
@@ -135,3 +139,4 @@ export default class PinCodeInner {
     });
   }
 }
+
