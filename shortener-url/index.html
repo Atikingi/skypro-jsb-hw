@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Укорачиватель URL</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="shortener__content">
+        <form class="shortener__box">
+          <input class="shortener__url-text" type="text" required />
+          <button class="shortener__button">Обрезать URL</button>
+          <div class="shortener__spinner shortener__spinner__hidden">
+            <i class="fa-solid fa-circle-notch fa-spin fa-xl"></i>
+          </div>
+          <div class="shortener__error shortener__error__hidden">
+            Ошибка доступа к серверу. Попробуйте позже
+          </div>
+        </form>
+        <div class="shortener__copy-box">
+          <input type="text" class="shortener__result" readonly />
+          <div class="shortener__copy-button">
+            <i class="fa-solid fa-xl fa-copy" id="copy-icon"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/bd8634f8ec.js" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
