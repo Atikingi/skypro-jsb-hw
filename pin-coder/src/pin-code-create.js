@@ -19,34 +19,45 @@ export default class PinCodeCreate {
 
     new PinCodeKeyboard(this.pinCodeKeyboard, this.pinCodeInput);
 
-    this.pinCodeSave.addEventListener('click', (event) => {
-      event.preventDefault();
-
-      if (!this.pinCodeInput.value.length) {
-        return;
-      }
-
-      this.hideElements();
-      new PinCodeStorage(this.pinCodeInput);
-      new PinCodeInner();
-    });
-
-    this.pinCodeClear.addEventListener('click', (event) => {
-      event.preventDefault();
-
-      new PinCodeStorage(this.pinCodeInput);
-      this.showElements();
-
-      this.element.querySelectorAll('.pin-code__accept-wrapper').forEach((node) => {
-        node.remove();
-      });
-    });
+    this.saveEvent(this.pinCodeSave);
+    this.clearEvent(this.pinCodeClear);
 
     if (localStorage.userPinCode) {
       this.hideElements();
     } else {
       this.showElements();
     }
+  }
+
+  saveEvent(saveButton) {
+    saveButton.addEventListener('click', (event) => {
+      event.preventDefault();
+
+      if (!this.pinCodeInput.value.length) {
+        return;
+      }
+  
+      this.hideElements();
+      new PinCodeStorage(this.pinCodeInput);
+      new PinCodeInner();
+    });
+  }
+
+  clearEvent(clearButton) {
+    clearButton.addEventListener('click', (event) => {
+      event.preventDefault();
+
+      new PinCodeStorage(this.pinCodeInput);
+      this.showElements();
+
+      this.removeInnerInputs(this.element)
+    });
+  }
+
+  removeInnerInputs(element) {
+    element.querySelectorAll('.pin-code__accept-wrapper').forEach((node) => {
+      node.remove();
+    });
   }
 
   validateProps(props) {
