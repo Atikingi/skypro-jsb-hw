@@ -25,8 +25,4 @@ export default class PinCodeValidate {
       elem.classList.remove('pin-code__input-inner__error');
     }
   }
-
-  clg() {
-    console.log('privet');
-  }
 }
