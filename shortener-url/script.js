@@ -44,11 +44,7 @@ function validateInput(url) {
     /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,}(:[0-9]{1,5})?(\/.*)?$/g
   );
 
-  if (regex.test(url)) {
-    return true;
-  } else {
-    return false;
-  }
+  return regex.test(url);
 }
 
 function showElements(button, spinner) {
