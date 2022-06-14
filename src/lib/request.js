@@ -11,7 +11,7 @@ function request ({
 
     req.open(method, url);
     req.responseType = type;
-debugger
+
     req.onload = (event) => {
       const { target } = event;
 
