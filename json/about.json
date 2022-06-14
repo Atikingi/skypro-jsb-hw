@@ -1,0 +1,5 @@
+{
+  "title": "About",
+  "subtitle": "about subtitle",
+  "body": "<a href='./index.html'>Main</a> <a href='./about.html'>About</a> <a href='./contacts.html'>Contacts</a>"
+}
