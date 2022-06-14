@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     content.innerHTML = '';
 
+    history.pushState(null, null, target.href);
     pageName = target.pathname.slice(1, -5);
 
     request({
