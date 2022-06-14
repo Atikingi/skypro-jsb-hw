@@ -11,7 +11,7 @@ function request ({
 
     req.open(method, url);
     req.responseType = type;
-
+debugger
     req.onload = (event) => {
       const { target } = event;
 
@@ -25,7 +25,9 @@ function request ({
     };
 
     req.onerror = () => {
-      onError('Непредвиденная ошибка. Попробуйте позже.');
+      onError(() => {
+        console.log('Непредвиденная ошибка. Попробуйте позже.');
+      });
 
       return;
     };
