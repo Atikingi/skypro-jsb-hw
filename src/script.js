@@ -3,10 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const subtitle = document.querySelector('.subtitle');
   const content = document.querySelector('.content');
 
-  let pageName = location.pathname.slice(1, -5);
+  const sliceURL = (target) => {
+    return target.pathname.slice(1, -5);
+  }
 
   request({
-    url: `json/${pageName}.json`,
+    url: `json/${sliceURL(location)}.json`,
     onSuccess: (data) => {
       title.textContent = data.title;
       subtitle.textContent = data.subtitle;
@@ -22,10 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
     content.innerHTML = '';
 
     history.pushState(null, null, target.href);
-    pageName = target.pathname.slice(1, -5);
 
     request({
-      url: `json/${pageName}.json`,
+      url: `json/${sliceURL(target)}.json`,
       onSuccess: (data) => {
         title.textContent = data.title;
         subtitle.textContent = data.subtitle;
