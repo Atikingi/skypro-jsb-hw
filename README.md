@@ -37,3 +37,6 @@
 ## [Pin-coder](https://Atikingi.github.io/skypro-jsb-hw/pin-coder/)
 ## HomeWork-13:
 ## [Shortener-url](https://Atikingi.github.io/skypro-jsb-hw/shortener-url/)
+## HomeWork-14:
+## [Dynamic-value](https://Atikingi.github.io/skypro-jsb-hw/dynamic-value/)
+## [Shortener-url](https://Atikingi.github.io/skypro-jsb-hw/shortener-url/)
