@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const content = document.querySelector('.content');
 
   const sliceURL = (target) => {
-    return target.pathname.slice(1, -5);
+    return target.pathname.slice(26, -5);
   }
 
   request({
