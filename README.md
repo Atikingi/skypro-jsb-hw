@@ -40,3 +40,4 @@
 ## HomeWork-14:
 ## [Dynamic-value](https://Atikingi.github.io/skypro-jsb-hw/dynamic-value/)
 ## [Simple-spa](https://Atikingi.github.io/skypro-jsb-hw/simple-spa/index.html)
+
