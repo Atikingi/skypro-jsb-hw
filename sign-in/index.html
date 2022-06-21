@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Вход на сайт</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form class="sign-in" action="#" method="GET">
+        <label for="sign-in__input-logi">Логин</label>
+        <input
+          class="sign-in__input-login"
+          type="text"
+          id="sign-in__input-login"
+          autocomplete="off"
+        />
+        <label for="sign-in__password">Пароль</label>
+        <input
+          class="sign-in__input-password"
+          type="text"
+          id="sign-in__password"
+          autocomplete="off"
+        />
+        <button class="sign-in__button">Войти</button>
+        <p class="sign-in__status sign-in__status__hidden"></p>
+      </form>
+    </div>
+
+    <script src="./src/request.js"></script>
+    <script src="./src/script.js"></script>
+  </body>
+</html>
