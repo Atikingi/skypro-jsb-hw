@@ -13,8 +13,7 @@ export default class CurrentWeather {
 
     this.button.addEventListener('click', () => {
       navigator.geolocation.getCurrentPosition((data) => {
-        let latitude = data.coords.latitude;
-        let longitude = data.coords.longitude;
+        let {latitude, longitude} = data.coords;
 
         this.getCurrentCItyName(latitude, longitude);
         this.getWeatherData(this.tempValue, latitude, longitude);
@@ -26,7 +25,6 @@ export default class CurrentWeather {
 
   getCurrentWeather(city) {
     request({
-      //   url: '/weather/src/stubs/moscow.json',
       url: 'http://api.openweathermap.org/geo/1.0/direct',
       params: {
         q: city,
@@ -39,19 +37,18 @@ export default class CurrentWeather {
           this.lon = data[0].lon;
           this.getWeatherData(this.tempValue, this.lat, this.lon);
         } else {
-          console.log('некорректный город');
+          alert('некорректный город');
           return;
         }
       },
       onError: () => {
-        console.log('некорректный город');
+        alert('некорректный город');
       },
     });
   }
 
   getWeatherData(tempField, lat, lon) {
     request({
-      //   url: '/weather/src/stubs/moscow-weather.json',
       url: 'https://api.openweathermap.org/data/2.5/weather',
       params: {
         lat: lat,

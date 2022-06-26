@@ -1,6 +1,6 @@
 import CurrentWeather from './current-weather.js';
 
-class Suggest {
+class Suggest{
   constructor() {
     this.cityValue = document.querySelector('.suggest__input');
     this.renderSuggestPopup();
@@ -11,8 +11,6 @@ class Suggest {
 
     this.getCities();
     this.cityArr = [];
-
-    new CurrentWeather();
 
     this.cityValue.addEventListener('input', (event) => {
       if (event.target.value === '') {
@@ -122,3 +120,5 @@ Suggest.templateSuggestItem = (suggests) =>
   }));
 
 const getCity = new Suggest();
+
+const currentWeather = new CurrentWeather();
