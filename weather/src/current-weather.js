@@ -1,89 +1,53 @@
-const windValue = document.querySelector('.weather__wind');
-const humidityValue = document.querySelector('.weather__humidity');
+import DataAPIWeather from './api-data.js';
 
 export default class CurrentWeather {
   constructor() {
-    this.tempValue = document.querySelector('.weather__temperature');
-    this.iconWeather = document.querySelector('.weather__icon');
-    this.button = document.querySelector('.suggest__button');
-    this.cityName = document.querySelector('.suggest__input');
-    this.weatherType = document.querySelector('.weather__weather-type');
+    this.API_DATA = new DataAPIWeather();
 
-    this.APP_ID = '9a3ad09b825a06c0667adeea7504e7c6';
+    this.tempValue = document.getElementById('weather-temperature');
+    this.iconWeather = document.getElementById('weather-icon');
+    this.button = document.getElementById('suggest-button');
+    this.cityName = document.getElementById('suggest-input');
+    this.weatherType = document.getElementById('weather-type');
+    this.windValue = document.getElementById('weather-wind');
+    this.humidityValue = document.getElementById('weather-humidity');
 
     this.button.addEventListener('click', () => {
-      navigator.geolocation.getCurrentPosition((data) => {
-        let {latitude, longitude} = data.coords;
+      this.getCurrentPosition();
+    });
 
-        this.getCurrentCItyName(latitude, longitude);
-        this.getWeatherData(this.tempValue, latitude, longitude);
+    this.renderCityWeather(this.cityName.value);
+  }
+
+  getCurrentPosition() {
+    navigator.geolocation.getCurrentPosition((data) => {
+      let { latitude, longitude } = data.coords;
+
+      this.API_DATA.getCurrentCityName(latitude, longitude, (response) => {
+        this.cityName.value = response;
       });
-    });
 
-    this.getCurrentWeather(this.cityName.value);
-  }
-
-  getCurrentWeather(city) {
-    request({
-      url: 'http://api.openweathermap.org/geo/1.0/direct',
-      params: {
-        q: city,
-        limit: 1,
-        appid: this.APP_ID,
-      },
-      onSuccess: (data) => {
-        if (data[0]) {
-          this.lat = data[0].lat;
-          this.lon = data[0].lon;
-          this.getWeatherData(this.tempValue, this.lat, this.lon);
-        } else {
-          alert('некорректный город');
-          return;
-        }
-      },
-      onError: () => {
-        alert('некорректный город');
-      },
+      this.renderCurrentCityWeather(latitude, longitude);
     });
   }
 
-  getWeatherData(tempField, lat, lon) {
-    request({
-      url: 'https://api.openweathermap.org/data/2.5/weather',
-      params: {
-        lat: lat,
-        lon: lon,
-        appid: this.APP_ID,
-      },
-      onSuccess: (data) => {
-        const iconCode = data.weather[0].icon;
-        const iconUrl = 'http://openweathermap.org/img/w/' + iconCode + '.png';
-        const temp = `${Math.ceil(data.main.temp_min - 273.15)} °C`;
+  renderCurrentCityWeather(lat, lon) {
+    this.API_DATA.getWeatherData(lat, lon, (response) => {
+      const { iconUrl, temperature, windSpeed, humidity, weatherType } = response;
 
-        tempField.textContent = temp;
-        this.iconWeather.setAttribute('src', iconUrl);
-        windValue.textContent = `${data.wind.speed} м/с`;
-        humidityValue.textContent = `${data.main.humidity}%`;
-        this.weatherType.textContent = `${data.weather[0].main}, ${data.weather[0].description}`;
-      },
-      onError: () => {
-        console.log('Ошибка сервера');
-      },
+      this.tempValue.textContent = temperature;
+      this.iconWeather.setAttribute('src', iconUrl);
+      this.windValue.textContent = windSpeed;
+      this.humidityValue.textContent = humidity;
+      this.weatherType.textContent = weatherType;
     });
   }
 
-  getCurrentCItyName(lat, lon) {
-    request({
-      url: 'http://api.openweathermap.org/geo/1.0/reverse',
-      params: {
-        lat: lat,
-        lon: lon,
-        limit: 1,
-        appid: this.APP_ID,
-      },
-      onSuccess: (data) => {
-        this.cityName.value = data[0].local_names.ru;
-      },
+  renderCityWeather(city) {
+    this.API_DATA.getCurrentWeather(city, (response) => {
+      const { lat, lon } = response;
+
+      this.renderCurrentCityWeather(lat, lon);
     });
   }
 }

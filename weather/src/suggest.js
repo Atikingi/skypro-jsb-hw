@@ -2,10 +2,10 @@ import CurrentWeather from './current-weather.js';
 
 class Suggest{
   constructor() {
-    this.cityValue = document.querySelector('.suggest__input');
+    this.cityValue = document.getElementById('suggest-input');
     this.renderSuggestPopup();
 
-    this.suggest = document.querySelector('.suggest__popup');
+    this.suggest = document.getElementById('suggest__popup');
 
     this.getPosition(this.cityValue, this.suggest);
 
@@ -24,7 +24,7 @@ class Suggest{
     });
 
     document.body.addEventListener('click', (event) => {
-      if (!event.target.classList.contains('suggest__popup-item')) {
+      if (event.target.id !== 'suggest__popup-item') {
         this.hidePopup();
         return;
       }
@@ -33,7 +33,7 @@ class Suggest{
     this.suggest.addEventListener('click', (event) => {
       const { target } = event;
 
-      if (!target.classList.contains('suggest__popup-item')) {
+      if (target.id !== 'suggest__popup-item') {
         this.hidePopup();
         return;
       }
@@ -92,7 +92,7 @@ class Suggest{
 
     const { bottom, left } = coords;
 
-    popup.style.top = bottom + this.cityValue.offsetHeight * 2 + 'px';
+    popup.style.top = bottom + this.cityValue.offsetHeight * 1.6 + 'px';
     popup.style.left = left + 'px';
   }
 
@@ -108,14 +108,15 @@ class Suggest{
 Suggest.templatePopup = [
   {
     tag: 'div',
-    cls: ['suggest__popup', 'suggest__popup__hidden'],
+    cls: 'suggest__popup__hidden',
+    id: 'suggest__popup',
   },
 ];
 
 Suggest.templateSuggestItem = (suggests) =>
   suggests.map((item) => ({
     tag: 'div',
-    cls: 'suggest__popup-item',
+    id: 'suggest__popup-item',
     content: item,
   }));
 

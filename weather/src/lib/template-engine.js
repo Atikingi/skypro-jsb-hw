@@ -23,6 +23,10 @@ function templateEngine(block) {
     result.classList.add(...[].concat(block.cls));
   }
 
+  if (block.id) {
+    result.id = block.id;
+  }
+
   if (block.attrs) {
     const attrsName = Object.keys(block.attrs);
 

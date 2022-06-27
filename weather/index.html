@@ -14,31 +14,38 @@
           <div class="suggest">
             <input
               class="suggest__input"
+              id="suggest-input"
               type="text"
               value="Санкт-Петербург"
               placeholder="наберите город"
               spellcheck="false"
             />
-            <button class="suggest__button">
+            <button class="suggest__button" id="suggest-button">
               <i class="fa-solid fa-map-location-dot fa-l"></i>
             </button>
           </div>
-          <img src="" alt="current weather icon" class="weather__icon" width="90" />
+          <img
+            src=""
+            alt="current weather icon"
+            class="weather__icon"
+            id="weather-icon"
+            width="90"
+          />
         </section>
         <section class="weather__main">
           <div class="weather__data-wrapper">
             <div class="weather__data">
               <i class="fa-solid fa-wind fa-xl"></i>
-              <p class="weather__data-value weather__wind"></p>
+              <p class="weather__data-value weather__wind" id="weather-wind"></p>
             </div>
             <div class="weather__data">
               <i class="fa-solid fa-droplet fa-xl"></i>
-              <p class="weather__data-value weather__humidity"></p>
+              <p class="weather__data-value weather__humidity" id="weather-humidity"></p>
             </div>
           </div>
           <div class="weather__temp-wrapper">
-            <h2 class="weather__temperature"></h2>
-            <p class="weather__weather-type"></p>
+            <h2 class="weather__temperature" id="weather-temperature"></h2>
+            <p class="weather__weather-type" id="weather-type"></p>
           </div>
         </section>
       </div>
