@@ -2,7 +2,7 @@ import DataAPIWeather from './api-data.js';
 
 export default class CurrentWeather {
   constructor() {
-    this.API_DATA = new DataAPIWeather();
+    this.weatherApi = new DataAPIWeather();
 
     this.tempValue = document.getElementById('weather-temperature');
     this.iconWeather = document.getElementById('weather-icon');
@@ -23,7 +23,7 @@ export default class CurrentWeather {
     navigator.geolocation.getCurrentPosition((data) => {
       let { latitude, longitude } = data.coords;
 
-      this.API_DATA.getCurrentCityName(latitude, longitude, (response) => {
+      this.weatherApi.getCurrentCityName(latitude, longitude, (response) => {
         this.cityName.value = response;
       });
 
@@ -32,7 +32,7 @@ export default class CurrentWeather {
   }
 
   renderCurrentCityWeather(lat, lon) {
-    this.API_DATA.getWeatherData(lat, lon, (response) => {
+    this.weatherApi.getWeatherData(lat, lon, (response) => {
       const { iconUrl, temperature, windSpeed, humidity, weatherType } = response;
 
       this.tempValue.textContent = temperature;
@@ -44,7 +44,7 @@ export default class CurrentWeather {
   }
 
   renderCityWeather(city) {
-    this.API_DATA.getCurrentWeather(city, (response) => {
+    this.weatherApi.getCurrentWeather(city, (response) => {
       const { lat, lon } = response;
 
       this.renderCurrentCityWeather(lat, lon);

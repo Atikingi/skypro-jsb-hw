@@ -1,21 +1,19 @@
 export default class DataAPIWeather {
-  constructor() {
-    this.APP_ID = '9a3ad09b825a06c0667adeea7504e7c6';
-  }
+  APP_ID = '9a3ad09b825a06c0667adeea7504e7c6';
+  API_URL = 'http://api.openweathermap.org';
 
   getCurrentWeather(city, onSuccess) {
-    const API_URL = 'http://api.openweathermap.org/geo/1.0/direct';
     const numberOfResponse = 1;
 
     request({
-      url: API_URL,
+      url: `${this.API_URL}/geo/1.0/direct`,
       params: {
         q: city,
         limit: numberOfResponse,
         appid: this.APP_ID,
       },
       onSuccess: (data) => {
-        const responseCityObject = data[0];
+        const [responseCityObject] = data;
 
         if (responseCityObject) {
           onSuccess(responseCityObject);
@@ -31,10 +29,9 @@ export default class DataAPIWeather {
   }
 
   getWeatherData(lat, lon, onSuccess) {
-    const API_URL = 'https://api.openweathermap.org/data/2.5/weather';
-
+    
     request({
-      url: API_URL,
+      url: `${this.API_URL}/data/2.5/weather`,
       params: {
         lat: lat,
         lon: lon,
@@ -63,11 +60,10 @@ export default class DataAPIWeather {
   }
 
   getCurrentCityName(lat, lon, onSuccess) {
-    const API_URL = 'http://api.openweathermap.org/geo/1.0/reverse';
     const numberOfResponse = 1;
 
     request({
-      url: API_URL,
+      url: `${this.API_URL}/geo/1.0/reverse`,
       params: {
         lat: lat,
         lon: lon,
