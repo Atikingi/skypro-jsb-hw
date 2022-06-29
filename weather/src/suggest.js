@@ -46,7 +46,7 @@ class Suggest{
 
   getCities() {
     request({
-      url: '/weather/src/json/cities.json',
+      url: '/src/json/cities.json',
       onSuccess: (data) => {
         data.city.forEach((city) => {
           this.cityArr.push(city.name);
