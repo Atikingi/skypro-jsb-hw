@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: bisque;
+}
+
+.sign-in {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 40px;
+}
+
+.sign-in__status {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  color: blueviolet;
+}
+
+.sign-in__status__hidden {
+  display: none;
+}
