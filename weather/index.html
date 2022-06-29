@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Погодный виджет</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="weather">
+        <section class="weather__header">
+          <div class="suggest">
+            <input
+              class="suggest__input"
+              id="suggest-input"
+              type="text"
+              value="Санкт-Петербург"
+              placeholder="наберите город"
+              spellcheck="false"
+            />
+            <button class="suggest__button" id="suggest-button">
+              <i class="fa-solid fa-map-location-dot fa-l"></i>
+            </button>
+          </div>
+          <img
+            src=""
+            alt="current weather icon"
+            class="weather__icon"
+            id="weather-icon"
+            width="90"
+          />
+        </section>
+        <section class="weather__main">
+          <div class="weather__data-wrapper">
+            <div class="weather__data">
+              <i class="fa-solid fa-wind fa-xl"></i>
+              <p class="weather__data-value weather__wind" id="weather-wind"></p>
+            </div>
+            <div class="weather__data">
+              <i class="fa-solid fa-droplet fa-xl"></i>
+              <p class="weather__data-value weather__humidity" id="weather-humidity"></p>
+            </div>
+          </div>
+          <div class="weather__temp-wrapper">
+            <h2 class="weather__temperature" id="weather-temperature"></h2>
+            <p class="weather__weather-type" id="weather-type"></p>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/bd8634f8ec.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./src/lib/request.js"></script>
+    <script src="./src/lib/template-engine.js"></script>
+    <script src="./src/suggest.js" type="module"></script>
+  </body>
+</html>
