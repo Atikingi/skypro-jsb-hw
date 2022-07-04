@@ -5,7 +5,7 @@ export default class DataAPI {
 
   checkWord(text, onSuccess) {
     request({
-      url: `${this.API_URL}/lookup?`,
+      url: `${this.API_URL}/lookup`,
       method: 'POST',
       body: {
         key: this.APP_ID,
