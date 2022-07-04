@@ -15,13 +15,13 @@ export default class DataAPI {
     });
   }
 
-  createPost(userTitle, userText, onSuccess) {
+  createPost(title, text, onSuccess) {
     request({
       url: `${this.API_URL}posts`,
       method: 'POST',
       body: {
-        title: userTitle,
-        body: userText,
+        title: title,
+        body: text,
       },
       okResponses: [200, 201],
       onSuccess: (data) => {
@@ -53,13 +53,13 @@ export default class DataAPI {
     });
   }
 
-  editPost(id, userTitle, userText) {
+  editPost(id, title, text) {
     request({
       url: `${this.API_URL}posts/${id}`,
       method: 'PATCH',
       body: {
-        title: userTitle,
-        body: userText,
+        title: title,
+        body: text,
       },
       okResponses: [200, 201],
       onSuccess: () => {

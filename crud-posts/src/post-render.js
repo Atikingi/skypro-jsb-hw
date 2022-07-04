@@ -30,35 +30,7 @@ export default class PostsRender {
     this.postsHolder.addEventListener('click', (event) => {
       const { target } = event;
 
-      if (target.id === 'posts-delete') {
-        this.post = document.getElementById(target.dataset.id);
-
-        this.deletePostConfirm(this.post, this.post.firstChild.id);
-      }
-
-      if (target.id === 'post-delete-true') {
-        this.deletePost(Number(this.post.id));
-      }
-
-      if (target.id === 'post-delete-false') {
-        document.getElementById('posts-delete-popup').remove();
-        return;
-      }
-
-      if (target.id === 'posts-edit') {
-        this.editPost(target);
-      }
-
-      if (
-        (target.dataset.post === 'true' && target.dataset.edit !== 'true') ||
-        (target.id === 'post-wrapper' &&
-          target.dataset.edit !== 'true' &&
-          !location.href.includes('id'))
-      ) {
-        this.router.changePath(target.dataset.id);
-
-        this.openPost(target.dataset.id);
-      }
+      this.clickActionHandler(target);
     });
   }
 
@@ -179,6 +151,38 @@ export default class PostsRender {
       this.openPost(this.router.getPageId());
     } else {
       this.getDefaultPostsList();
+    }
+  }
+
+  clickActionHandler(target){
+    if (target.id === 'posts-delete') {
+      this.post = document.getElementById(target.dataset.id);
+
+      this.deletePostConfirm(this.post, this.post.firstChild.id);
+    }
+
+    if (target.id === 'post-delete-true') {
+      this.deletePost(Number(this.post.id));
+    }
+
+    if (target.id === 'post-delete-false') {
+      document.getElementById('posts-delete-popup').remove();
+      return;
+    }
+
+    if (target.id === 'posts-edit') {
+      this.editPost(target);
+    }
+
+    if (
+      (target.dataset.post === 'true' && target.dataset.edit !== 'true') ||
+      (target.id === 'post-wrapper' &&
+        target.dataset.edit !== 'true' &&
+        !location.href.includes('id'))
+    ) {
+      this.router.changePath(target.dataset.id);
+
+      this.openPost(target.dataset.id);
     }
   }
 }
