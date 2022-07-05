@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD-интерфейс</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container" id="container">
+      <div class="posts" id="posts"></div>
+      <form class="posts__create-form">
+        <input
+          class="posts__create-form-title"
+          type="text"
+          id="user-title"
+          placeholder="Заголовок поста"
+          required
+        />
+        <textarea
+          id="user-body"
+          cols="50"
+          rows="10"
+          placeholder="Текст"
+          required
+        ></textarea>
+        <button class="posts__create" id="posts-create">Создать пост</button>
+      </form>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/bd8634f8ec.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./src/lib/request.js"></script>
+    <script src="./src/lib/template-engine.js"></script>
+    <script src="./src/api-data.js" type="module"></script>
+    <script src="./src/post-render.js" type="module"></script>
+    <script src="./src/routing.js" type="module"></script>
+  </body>
+</html>
