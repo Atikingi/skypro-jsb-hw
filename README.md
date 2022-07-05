@@ -43,3 +43,6 @@
 ## HomeWork-15:
 ## [Sign-in](https://Atikingi.github.io/skypro-jsb-hw/sign-in/)
 ## [Weather](https://Atikingi.github.io/skypro-jsb-hw/weather/)
+## HomeWork-16:
+## [Ru-word](https://Atikingi.github.io/skypro-jsb-hw/ru-word/)
+## [CRUD-posts](https://Atikingi.github.io/skypro-jsb-hw/crud-posts/)
