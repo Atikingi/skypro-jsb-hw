@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Latin&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: 'Anek Latin', sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+
+  background-color: bisque;
+}
+
+.word-check {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 300px;
+}
+
+.word-check__title {
+  margin-bottom: 30px;
+}
+
+.word-check__text {
+  margin-bottom: 10px;
+}
+
+.footer {
+  height: 60px;
+  width: 100vw;
+  padding-top: 25px;
+
+  background-color: rgb(231, 134, 15);
+  text-align: center;
+}
+
+.footer__link {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+}

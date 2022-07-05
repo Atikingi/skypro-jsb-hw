@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Погодный виджет</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form class="word-check">
+        <h1 class="word-check__title" id="word-title">
+          Проверить наличие слова в русском языке
+        </h1>
+        <input type="text" class="word-check__text" id="word-text" />
+        <button class="word-check__send" id="word-send">Проверить</button>
+      </form>
+      <footer class="footer">
+        <p class="footer__link">«Реализовано с помощью сервиса <a href="https://tech.yandex.ru/dictionary/" class="footer__link"
+          >«Яндекс.Словарь»</a
+        ></p> 
+      </footer>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/bd8634f8ec.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./src/lib/request.js"></script>
+    <script src="./src/api-data.js" type="module"></script>
+    <script src="./src/word-check.js" type="module"></script>
+  </body>
+</html>
