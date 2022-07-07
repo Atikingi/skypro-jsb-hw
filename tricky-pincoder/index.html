@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./node_modules/pincode-input/dist/pincode-input.min.css">
+    <title>Пин-кодер</title>
+  </head>
+  <body>
+    <div id="demo"></div>
+    <div class="container" id="container">
+      <div class="content__popup hide">
+        <div class="popup-box">
+          <span>Пин-код верный</span>
+          <img src="./copy-done.png" alt="copy-done-icon" />
+        </div>
+      </div>
+    </div>
+
+    <script src="./src/template-engine.js"></script>
+    <script type="module" src="./src/script.js"></script>
+    <script src="./src/demo.js" type="module"></script>
+  </body>
+</html>
