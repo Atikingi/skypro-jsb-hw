@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vs code clone</title>
+  </head>
+  <body>
+    <div id="container" style="height: 100vh"></div>
+
+    <script src="./node_modules/monaco-editor/min/vs/loader.js"></script>
+    <script>
+      require.config({ paths: { vs: 'node_modules/monaco-editor/min/vs' } });
+      require(['vs/editor/editor.main'], function () {
+        const editor = monaco.editor.create(document.getElementById('container'), {
+          value:
+            "// First line\nfunction hello() {\n\talert('Hello world!');\n}\n// Last line",
+          language: 'javascript',
+
+          lineNumbers: 'off',
+          roundedSelection: false,
+          scrollBeyondLastLine: false,
+          readOnly: false,
+          theme: 'vs-dark',
+        });
+        setTimeout(function () {
+          editor.updateOptions({
+            lineNumbers: 'on',
+          });
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>
